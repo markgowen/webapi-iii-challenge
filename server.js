@@ -1,6 +1,11 @@
-const express = 'express';
+const express = require('express');
+const helmet = require('helmet');
+const morgan = require('morgan');
 
 const server = express();
+
+server.use(express.json());
+server.use(logger);
 
 server.get('/', (req, res) => {
   res.send(`<h2>Let's write some middleware!</h2>`);
